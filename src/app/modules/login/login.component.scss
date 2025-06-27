@@ -1,0 +1,90 @@
+.auth-bg {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.volver-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: #24e960;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 5; // Asegura que siempre esté sobre el resto
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  background: #24282d;
+  border-radius: 24px;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.2);
+  padding: 32px 40px;
+  min-width: 380px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-card .logo {
+  max-width: 180px;
+  margin-bottom: 16px;
+}
+
+.auth-card h2 {
+  margin-bottom: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+@media (max-width: 570px) {
+  .auth-card {
+    min-width: unset;
+    width: 95%;
+    padding: 20px 8px;
+  }
+}
+
+.button-container button {
+  margin-left: 0;
+  margin-right: 0;
+  display: block;
+}

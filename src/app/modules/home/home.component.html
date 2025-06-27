@@ -1,8 +1,52 @@
-<p>home works!</p>
-<section>
-  <div class="example-label">LA FIJA</div>
-  <div class="example-button-row">
-    <button mat-stroked-button>Login</button>
-    <button mat-stroked-button color="primary" routerLink="/register">Register</button >
+<nav class="navbar">
+  <div class="navbar-logo">
+    <span>LA FIJA</span>
   </div>
-</section>
+  <div class="navbar-links">
+    <a href="/login" class="nav-link">Login</a>
+    <a href="/register" class="btn-register">Registrar</a>
+  </div>
+</nav>
+
+<div class="home-container">
+  <!-- Apuestas Deportivas -->
+  <section class="catalog-section">
+    <div class="section-header">
+      <h2>Apuestas Deportivas</h2>
+      <button class="ver-mas">VER MÁS</button>
+    </div>
+    <div class="catalog-list">
+      <div class="catalog-card" *ngFor="let sport of deportes">
+        <img [src]="sport.img" [alt]="sport.title" />
+        <div class="catalog-title">{{ sport.title }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casino -->
+  <section class="catalog-section">
+    <div class="section-header">
+      <h2>Casino</h2>
+      <button class="ver-mas">VER MÁS</button>
+    </div>
+    <div class="catalog-list">
+      <div class="catalog-card" *ngFor="let casino of casinos">
+        <img [src]="casino.img" [alt]="casino.title" />
+        <div class="catalog-title">{{ casino.title }}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promociones -->
+  <section class="catalog-section">
+    <div class="section-header">
+      <h2>Promociones</h2>
+    </div>
+    <div class="catalog-list">
+      <div class="catalog-card" *ngFor="let promo of promociones">
+        <img [src]="promo.img" [alt]="promo.title" />
+        <div class="catalog-title">{{ promo.title }}</div>
+      </div>
+    </div>
+  </section>
+</div>

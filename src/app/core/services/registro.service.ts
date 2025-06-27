@@ -15,4 +15,11 @@ export class RegistroService {
   register(data: any) {
     return this.http.post(`${this.apiUrl}/clientes`, data);
   }
+
+  login(data: any) {
+    return this.http.post(`${this.apiUrl}/clientes/login`, data);
+  }
+  getMensajeBienvenida(correo: string) {
+    return this.http.get<{ mensaje: string }>(`${this.apiUrl}/correos/bienvenida/${correo}`);
+  }
 }

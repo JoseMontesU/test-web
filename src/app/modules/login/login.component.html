@@ -1,0 +1,37 @@
+<div class="auth-bg">
+  <img src="img11.jpg" alt="Fondo login" class="bg-image">
+  <button class="volver-btn" routerLink="/">
+    Volver
+  </button>
+  <div class="auth-card">
+    <img src="img2.png" class="logo" alt="Logo" />
+    <h2>Inicia sesión</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput formControlName="correo" type="email" required autocomplete="email" />
+        <mat-error *ngIf="loginForm.get('correo')?.hasError('required')">
+          El correo es obligatorio.
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('correo')?.hasError('email')">
+          El correo no es válido.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" type="password" required autocomplete="current-password" />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          La contraseña es obligatoria.
+        </mat-error>
+      </mat-form-field>
+      <div class="button-container">
+    <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">
+      Ingresar
+    </button>
+  </div>
+      <div *ngIf="loginError" style="color: red; margin-top: 8px;">
+        {{ loginError }}
+      </div>
+    </form>
+  </div>
+</div>
